@@ -15,7 +15,7 @@ def display_breed():
 print("Welcome to Stray Cat Registration APP")
 print("-------------------------------------\n")
 
-# Missing get_cat() feature!
+# Missing get_cat() feature! 
 
 menu_1 = '''Menu
 1. Register Cat 😻
@@ -32,14 +32,15 @@ menu_2 = '''\nCat Name
 while True:
     print(menu_1)
     
-    menu_one_input = input("enter menu number 1 -> 5: ")
+    menu_one_input = input("Enter menu number 1 -> 5: ")
 
     if menu_one_input == "1":
 
         print(menu_2)
         
-        register_name = input("enter menu number 1 -> 2: ")
+        register_name = input("Enter menu number 1 -> 2: ")
         
+        # Random name generator
         if register_name == "1":
             cat_name = random_name('cat')
             print(f"Your generated cat name is: {cat_name}")
@@ -53,10 +54,10 @@ while True:
         while True:
             try:
                 register_breed = int(
-                input(f"\nenter menu number 1 -> {len(breeds)}: "))
+                input(f"\nEnter menu number 1 -> {len(breeds)}: "))
                 break
             except ValueError:
-                print("invalid input!")
+                print("Invalid Input!")
                 continue
         cat_breed = ''
 
@@ -102,7 +103,7 @@ while True:
                 update_cat_id = int(input("\nEnter cat ID for update: "))
                 break
             except ValueError:
-                print("invalid input!")
+                print("Invalid Input!")
                 continue
         id, name, gender, breed, dob, description = get_cat(update_cat_id)
 
@@ -118,10 +119,10 @@ while True:
         while True:
             try:
                 update_breed = int(
-                input(f"\nenter menu number 1 -> {len(breeds)} ({breed}): "))
+                input(f"\nEnter menu number 1 -> {len(breeds)} ({breed}): "))
                 break
             except ValueError:
-                print("invalid input!")
+                print("Invalid Input!")
                 continue
         if update_breed == '':
             update_breed = breed
@@ -148,12 +149,12 @@ while True:
                 remove_cat(remove_cat_id)
                 break
             except ValueError:
-                print("invalid input!")
+                print("Invalid Input!")
                 continue
     elif menu_one_input == "5":
         print("Goodbye!")
         break
 
     else:
-        print("invalid input!")
+        print("Invalid Input!")
         continue
